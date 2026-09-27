@@ -1,4 +1,6 @@
-﻿namespace OOP_01;
+﻿using OOP_01.DeliveryManagementSystem;
+
+namespace OOP_01;
 
 internal class Program
 {
@@ -25,6 +27,23 @@ internal class Program
 
         // b) How can private fields and public properties improve this design?
         // With controlled getters and setters to manage read and modify data
+        #endregion
+
+        #endregion
+
+        #region Practical
+
+        #region Question 01
+        DeliveryAdress deliveryAdress1 = new("Alex", "st 45" , 10);
+        DeliveryAdress deliveryAdress2 = deliveryAdress1;
+        deliveryAdress1.printAdress();
+        deliveryAdress2.printAdress();
+
+        Console.WriteLine("--------------------------------------------------");
+
+        deliveryAdress2 = new("cairo", "elsalam", 13);
+        deliveryAdress1.printAdress();
+        deliveryAdress2.printAdress();
         #endregion
 
         #endregion
