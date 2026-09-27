@@ -15,6 +15,18 @@ internal class Program
         // Values change in the two variables
         #endregion
 
+        #region Question 02
+        // a) Identify at least three problems with this design from an encapsulation perspective.
+        /*
+         * There is no validation to prevent invalid values
+         * All fields public allowing any one to modify data
+         * The design dose not use getters and setters
+        */
+
+        // b) How can private fields and public properties improve this design?
+        // With controlled getters and setters to manage read and modify data
+        #endregion
+
         #endregion
     }
 }
