@@ -35,15 +35,21 @@ internal class Program
 
         #region Question 01
         DeliveryAdress deliveryAdress1 = new("Alex", "st 45" , 10);
-        DeliveryAdress deliveryAdress2 = deliveryAdress1;
-        deliveryAdress1.printAdress();
-        deliveryAdress2.printAdress();
+        //DeliveryAdress deliveryAdress = Convert.To
+        //DeliveryAdress deliveryAdress2 = deliveryAdress1;
+        //deliveryAdress1.printAdress();
+        //deliveryAdress2.printAdress();
 
-        Console.WriteLine("--------------------------------------------------");
+        //Console.WriteLine("--------------------------------------------------");
 
-        deliveryAdress2 = new("cairo", "elsalam", 13);
-        deliveryAdress1.printAdress();
-        deliveryAdress2.printAdress();
+        //deliveryAdress2 = new("cairo", "elsalam", 13);
+        //deliveryAdress1.printAdress();
+        //deliveryAdress2.printAdress();
+        #endregion
+
+        #region printShipment
+        Shipment shipment = new Shipment(deliveryAdress1, "SH_101", "Laptop", 6, 50);
+        shipment.PrintShipment(); 
         #endregion
 
         #endregion
