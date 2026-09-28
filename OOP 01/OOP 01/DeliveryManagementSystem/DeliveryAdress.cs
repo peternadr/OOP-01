@@ -162,3 +162,72 @@ public struct Shipment
     #endregion
 }
 
+public struct DeliveryCenter
+{
+    #region Fields
+    private Shipment[] shipments;
+
+    #endregion
+
+    #region ctor
+    public DeliveryCenter()
+    {
+        shipments = new Shipment[10];
+    }
+    #endregion
+
+    #region indexers
+    public Shipment this[int position]
+    {
+        get
+        {
+            if (position >= 0 && position < 10)
+            {
+                return shipments[position];
+            }
+            return default;
+        }
+        set
+        {
+            if (position >= 0 && position < 10)
+            {
+                shipments[position] = value;
+            }
+        }
+    }
+
+    public Shipment this[string trackingCode]
+    {
+        get
+        {
+            for (int i = 0; i < shipments.Length; i++)
+            {
+                if (trackingCode == shipments[i].TrackingCode)
+                {
+              
+                    return shipments[i];
+                    
+                }
+            }
+            return default;
+        }
+    }
+    #endregion
+
+    #region Methods
+    public bool AddShipment(Shipment newShipment)
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            if (string.IsNullOrWhiteSpace(shipments[i].TrackingCode))
+            {
+                shipments[i] = newShipment;
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    #endregion
+}

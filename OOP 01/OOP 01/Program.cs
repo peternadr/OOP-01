@@ -1,4 +1,5 @@
 ﻿using OOP_01.DeliveryManagementSystem;
+using System.ComponentModel;
 
 namespace OOP_01;
 
@@ -34,7 +35,7 @@ internal class Program
         #region Practical
 
         #region Question 01
-        DeliveryAdress deliveryAdress1 = new("Alex", "st 45" , 10);
+        //DeliveryAdress deliveryAdress1 = new("Alex", "st 45" , 10);
 
         //DeliveryAdress deliveryAdress2 = deliveryAdress1;
         //deliveryAdress1.printAdress();
@@ -48,8 +49,8 @@ internal class Program
         #endregion
 
         #region printShipment
-        Shipment shipment = new Shipment(deliveryAdress1, "SH_101", "Laptop", 6, 50);
-        shipment.PrintShipment();
+        //Shipment shipment = new Shipment(deliveryAdress1, "SH_101", "Laptop", 6, 50);
+        //shipment.PrintShipment();
         #endregion
 
 
