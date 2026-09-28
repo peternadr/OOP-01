@@ -35,7 +35,7 @@ internal class Program
 
         #region Question 01
         DeliveryAdress deliveryAdress1 = new("Alex", "st 45" , 10);
-        //DeliveryAdress deliveryAdress = Convert.To
+
         //DeliveryAdress deliveryAdress2 = deliveryAdress1;
         //deliveryAdress1.printAdress();
         //deliveryAdress2.printAdress();
@@ -49,8 +49,9 @@ internal class Program
 
         #region printShipment
         Shipment shipment = new Shipment(deliveryAdress1, "SH_101", "Laptop", 6, 50);
-        shipment.PrintShipment(); 
+        shipment.PrintShipment();
         #endregion
+
 
         #endregion
     }

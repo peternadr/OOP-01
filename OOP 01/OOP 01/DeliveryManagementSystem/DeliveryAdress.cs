@@ -55,7 +55,7 @@ public struct Shipment
         {
             return trackingCode;
         }
-        set
+        private set
         {
             if (!string.IsNullOrWhiteSpace(value))
             {
@@ -69,7 +69,7 @@ public struct Shipment
         {
             return description;
         }
-        private set
+        set
         {
             if (!string.IsNullOrWhiteSpace(value))
             {
@@ -161,3 +161,4 @@ public struct Shipment
 
     #endregion
 }
+
