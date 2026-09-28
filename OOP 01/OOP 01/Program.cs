@@ -53,6 +53,119 @@ internal class Program
         //shipment.PrintShipment();
         #endregion
 
+        #region DeliveryManagementSystem
+
+        // Create a DeliveryCenter.
+        DeliveryCenter deliveryCenter = new DeliveryCenter();
+
+        // Read data for three shipments from the user.
+        for (int i = 0; i < 3; i++)
+        {
+            Console.WriteLine($"Enter Data For shipment {i+1}: ");
+
+            // Get tracking code from user
+            Console.Write("Enter Tracing Code: ");
+            string? trackingCode = Console.ReadLine();
+            
+
+            // Get description from user
+            Console.Write("Enter Description: ");
+            string? description = Console.ReadLine();
+            
+
+            // Get weight from user
+            bool flag = false;
+            decimal weight;
+            do
+            {
+                Console.Write("Enter Valid Weight: ");
+                flag = decimal.TryParse(Console.ReadLine(), out weight);
+            }
+            while (!flag || weight <= 0);
+            
+
+            // Get delivery Fee from user
+            decimal deliveryFee;
+            do
+            {
+                Console.Write("Enter Valid Delivery Fee: ");
+                flag = decimal.TryParse(Console.ReadLine(), out deliveryFee);
+            }
+            while (!flag || deliveryFee <= 0);
+            
+
+            // Get City from user
+            Console.Write("Enter Your City: ");
+            string? city = Console.ReadLine();
+            
+
+            // Get street from user
+            Console.Write("Enter Your street: ");
+            string? street = Console.ReadLine();
+            
+
+            // Get building Number from user
+            int buildingNumber;
+            do
+            {
+                Console.Write("Enter Valid Building Number: ");
+                flag = int.TryParse(Console.ReadLine(), out buildingNumber);
+            }
+            while (!flag);
+            
+
+            // Add shipment to delivery center
+            DeliveryAdress deliveryAdress = new DeliveryAdress(city, street, buildingNumber);
+            Shipment shipment = new Shipment(deliveryAdress, trackingCode, description, weight, deliveryFee);
+            if (deliveryCenter.AddShipment(shipment))
+            {
+                Console.WriteLine("--Shipment Add Successfully--");
+            }
+            Console.WriteLine();
+
+            
+        }
+
+        // print shipments
+        Console.WriteLine("--All Shipments: ");
+        for (int i = 0; i < 3; i++)
+        {
+            deliveryCenter[i].PrintShipment();
+            Console.WriteLine("----------------");
+        }
+
+        // Search about Shipment With Tracking Code
+        Console.Write("Enter a Tracking Code To Search: ");
+        string searchCode = Console.ReadLine();
+        Console.WriteLine();
+        Shipment foundShipment = deliveryCenter[searchCode];
+
+        //Print the shipment if found; otherwise print:Shipment not found. 
+        if (!string.IsNullOrWhiteSpace(foundShipment.TrackingCode))
+        {
+            Console.WriteLine("Shipment Found: ");
+            foundShipment.PrintShipment();
+        }
+        else
+        {
+            Console.WriteLine("Shipment Not Found: ");
+        }
+        Console.WriteLine();
+
+
+        //Demonstrate the DeliveryAddress struct copy behavior.
+        DeliveryAdress deliveryAdress1 = new("Alex", "st 45", 10);
+
+        DeliveryAdress deliveryAdress2 = deliveryAdress1;
+        deliveryAdress1.printAdress();
+        deliveryAdress2.printAdress();
+
+        Console.WriteLine("--------------------------------------------------");
+
+        deliveryAdress2 = new("cairo", "elsalam", 13);
+        deliveryAdress1.printAdress();
+        deliveryAdress2.printAdress();
+        #endregion
 
         #endregion
     }

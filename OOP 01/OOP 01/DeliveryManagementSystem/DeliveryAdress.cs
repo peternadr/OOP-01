@@ -26,10 +26,10 @@
     }
 
 
-    //public void printAdress()
-    //{
-    //    Console.WriteLine($"City: {City} Street: {Street} Building number is: {BuildingNumber} ");
-    //} 
+    public void printAdress()
+    {
+        Console.WriteLine($"City: {City} Street: {Street} Building number is: {BuildingNumber} ");
+    }
     #endregion
 }
 
